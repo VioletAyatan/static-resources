@@ -1,0 +1,13 @@
+﻿parsers: # array
+  - url: https://5d114110.ghelper.me/clash/30f51abdc7adb43e88bf33dda751f432
+    yaml:
+      # 添加新代理规则
+      #      prepend-rules:
+      #        -
+      #      commands指令可以对yaml文件中的选项进行重写
+      commands:
+        # clash在某次更新之后dns.enhanced-mode不再支持redir-host模式，这里对其重写为fake-ip
+        - dns.enhanced-mode=fake-ip
+      prepend-rules:
+        # steam相关代理规则
+        - DOMAIN-SUFFIX,steamcontent.com,DIRECT
